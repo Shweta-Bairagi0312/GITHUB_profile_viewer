@@ -2,36 +2,71 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: white;
 }
 
 .main{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-     background-image: url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?uid=R177719185&ga=GA1.1.1098714756.1746886165&semt=ais_hybrid&w=740);
+    padding: 20px;
+    background-image: url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?uid=R177719185&ga=GA1.1.1098714756.1746886165&semt=ais_hybrid&w=740);
     background-size: cover;
+    background-position: center;
+}
+
+.firstDiv h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px #000;
+}
+
+.firstDiv input {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    width: 250px;
+}
+
+.firstDiv button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #FF3D00;
     color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.firstDiv button:hover {
+    background: #ff6333;
 }
 
 .secondDiv{
+    margin-top: 30px;
     display: flex;
-    /* background-color: #acf4c3; */
-    background-color:#b0e0e617;
-    /* background-image: url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?uid=R177719185&ga=GA1.1.1098714756.1746886165&semt=ais_hybrid&w=740);
-    background-size: cover; */
-    width: 50%;
-    padding: 20px;
-    min-height: 50%;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    background-color:#b0e0e617;
+    width: 400px;
+    padding: 30px;
     border-radius: 20px;
-}
-
-.secondDivHidden{
-    display: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    min-height: 300px;
+    transition: all 0.3s;
 }
 
 .userInfo{
@@ -40,78 +75,86 @@
     justify-content: center;
     align-items: center;
 }
+
 .userImg{
     border-radius: 50%;
-    width: 100%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 3px solid #FF3D00;
 }
+
 .userDetail{
-    font-size: 25px;
+    font-size: 18px;
     text-align: center;
 }
+
 .userName{
-    font-size: 2em;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
+
+.userBio{
+    font-size: 1rem;
+    color: #ddd;
+}
+
 .userFollow{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    margin-top: 20px;
 }
+
 .Follower{
     display: flex ;
     width: 100%;
     justify-content: space-around;
-
+    margin-bottom: 20px;
 }
 
 .repo {
-    font-size: 2em;
     text-align: center;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.VisitProile{
+.repo:hover {
+    background: rgba(255,61,0,0.2);
+}
+
+.VisitProfile{
+    display: inline-block;
     background-color: rgb(60, 60, 60);
-    width: 80%;
-    height: 10%;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 60%;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    text-align: center;
     color: white;
     border-radius: 20px;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.VisitProfile:hover {
+    background-color: #FF3D00;
+    color: white;
 }
 
 .loader {
-    width: 48px;
-    height: 48px;
-    border: 3px solid #FFF;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255,255,255,0.2);
+    border-top-color: #FF3D00;
     border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-  } 
-  .loader::after {
-    content: '';  
-    box-sizing: border-box;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    border-bottom-color: #FF3D00;
-  }
-  
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } 
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
